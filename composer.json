@@ -1,0 +1,36 @@
+{
+    "name": "tjventurini/voyager-cms",
+    "description": "Custom CMS functionality for the voyager admin panel.",
+    "type": "package",
+    "authors": [
+        {
+            "name": "Thomas Venturini",
+            "email": "thomas@venturini.codes"
+        }
+    ],
+    "require": {
+        "nuwave/lighthouse": "^3.7",
+        "tcg/voyager": "^1.2",
+        "tjventurini/voyager-tags": "*",
+        "tjventurini/voyager-projects": "*",
+        "tjventurini/voyager-content-blocks": "*",
+        "tjventurini/voyager-pages": "*",
+        "tjventurini/voyager-posts": "*"
+    },
+    "require-dev": {
+        "mll-lab/laravel-graphql-playground": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tjventurini\\VoyagerTags\\Seeds\\": "database/seeds/",
+            "Tjventurini\\VoyagerTags\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tjventurini\\VoyagerTags\\VoyagerTagsServiceProvider"
+            ]
+        }
+    }
+}
