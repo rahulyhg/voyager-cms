@@ -22,14 +22,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Tjventurini\\VoyagerTags\\Seeds\\": "database/seeds/",
-            "Tjventurini\\VoyagerTags\\": "src/"
+            "Tjventurini\\VoyagerCMS\\Seeds\\": "database/seeds/",
+            "Tjventurini\\VoyagerCMS\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Tjventurini\\VoyagerTags\\VoyagerTagsServiceProvider"
+                "Tjventurini\\VoyagerCMS\\VoyagerCMSServiceProvider"
             ]
         }
     }

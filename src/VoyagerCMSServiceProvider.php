@@ -4,6 +4,7 @@ namespace Tjventurini\VoyagerCMS;
 
 use Illuminate\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
+use Tjventurini\VoyagerCMS\Console\Commands\VoyagerCMSInstall;
 
 class VoyagerCMSServiceProvider extends ServiceProvider
 {
@@ -45,6 +46,13 @@ class VoyagerCMSServiceProvider extends ServiceProvider
 
         // tell laravel where to find routes
         $this->loadRoutesFrom(__DIR__.'/../routes/routes.php');
+
+        // register commands
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                VoyagerCMSInstall::class,
+            ]);
+        }
     }
 
     /**
