@@ -11,7 +11,6 @@
     "require": {
         "nuwave/lighthouse": "^3.7",
         "tcg/voyager": "^1.2",
-        "tjventurini/voyager-tags": "*",
         "tjventurini/voyager-projects": "*",
         "tjventurini/voyager-content-blocks": "*",
         "tjventurini/voyager-pages": "*",
