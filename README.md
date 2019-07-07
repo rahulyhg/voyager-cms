@@ -39,3 +39,25 @@ php artisan voyager-cms:install
 ```
 
 *Note:* Use the `--force` flag to refresh the whole setup. This will refresh the migrations, run the seeders, overwrite the configurations, translations and views.
+
+# GraphQL
+
+For the headless part to work you will need a little bit of extra work.
+
+## Enable the Middleware
+
+To enable the middleware you need have to update your `app/Http/Kernel.php`.
+
+```php
+    /**
+     * The application's route middleware.
+     *
+     * These middleware may be assigned to groups or used individually.
+     *
+     * @var array
+     */
+    protected $routeMiddleware = [
+        // ...
+        'projectToken' => \Tjventurini\VoyagerProjects\Http\Middleware\VerifyProjectToken::class,
+    ];
+```
