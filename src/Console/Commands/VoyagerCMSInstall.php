@@ -57,6 +57,9 @@ class VoyagerCMSInstall extends Command
         // run seeders
         $this->runSeeders();
 
+        // install passport
+        $this->call('passport:install');
+
         // clear cache
         $this->call('cache:clear');
     }
@@ -150,6 +153,12 @@ class VoyagerCMSInstall extends Command
         $this->customCall('vendor:publish', ['--provider' => "Tjventurini\VoyagerContentBlocks\VoyagerContentBlocksServiceProvider", '--tag' => 'views']);
         $this->customCall('vendor:publish', ['--provider' => "Tjventurini\VoyagerContentBlocks\VoyagerContentBlocksServiceProvider", '--tag' => 'lang']);
         $this->customCall('vendor:publish', ['--provider' => "Tjventurini\VoyagerContentBlocks\VoyagerContentBlocksServiceProvider", '--tag' => 'graphql']);
+
+        // cms
+        $this->customCall('vendor:publish', ['--provider' => "Tjventurini\VoyagerCMS\VoyagerCMSServiceProvider", '--tag' => 'config']);
+        $this->customCall('vendor:publish', ['--provider' => "Tjventurini\VoyagerCMS\VoyagerCMSServiceProvider", '--tag' => 'views']);
+        $this->customCall('vendor:publish', ['--provider' => "Tjventurini\VoyagerCMS\VoyagerCMSServiceProvider", '--tag' => 'lang']);
+        $this->customCall('vendor:publish', ['--provider' => "Tjventurini\VoyagerCMS\VoyagerCMSServiceProvider", '--tag' => 'graphql']);
     }
 
     /**

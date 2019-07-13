@@ -14,7 +14,8 @@
         "tjventurini/voyager-projects": "*",
         "tjventurini/voyager-content-blocks": "*",
         "tjventurini/voyager-pages": "*",
-        "tjventurini/voyager-posts": "*"
+        "tjventurini/voyager-posts": "*",
+        "laravel/passport": "^7.3"
     },
     "require-dev": {
         "mll-lab/laravel-graphql-playground": "^1.0"
