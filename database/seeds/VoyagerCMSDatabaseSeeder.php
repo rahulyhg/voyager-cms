@@ -17,6 +17,6 @@ class VoyagerCMSDatabaseSeeder extends Seeder
         // $this->call(VoyagerCMSPermissionsSeeder::class);
         // $this->call(VoyagerCMSDataTypesSeeder::class);
         // $this->call(VoyagerCMSDataRowsSeeder::class);
-        // $this->call(VoyagerCMSMenuItemsSeeder::class);
+        $this->call(VoyagerCMSMenuItemsSeeder::class);
     }
 }
