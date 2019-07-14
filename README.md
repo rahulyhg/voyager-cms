@@ -162,3 +162,12 @@ Finally update your `config/auth.php`.
     ],
 ],
 ```
+
+To enable alternative authentication mutations - wich is recomended - you should add the following information to your environment configuration in `.env`.
+
+```
+PASSPORT_CLIENT_ID=
+PASSPORT_CLIENT_SECRET=
+```
+
+You will see the credentials for your password grant client in the output of the `php artisan voyager-cms:install` command or you take a look into the database in the `oauth_clients`.
