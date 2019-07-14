@@ -48,19 +48,12 @@ class RegisterUser
         $role = Role::where('name', 'user')->firstOrFail();
 
         // create user from the given data
-        $user = User::create([
+        return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'project_id' => $project->id,
             'user_role' => $role->id,
         ]);
-
-        // build response
-        return [
-            'access_token' => $user->createToken('test')->accessToken,
-            'token_type' => 'Bearer',
-            'user' => $user,
-        ];
     }
 }
