@@ -6,7 +6,36 @@ This package provides custom CMS functionality to the [laravel voyager](https://
 
 # Installation
 
-You can install this package using composer.
+You can install this package using composer. First update your `composer.json`.
+
+```json
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:tjventurini/voyager-cms.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:tjventurini/voyager-tags.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:tjventurini/voyager-projects.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:tjventurini/voyager-pages.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:tjventurini/voyager-posts.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:tjventurini/voyager-content-blocks.git"
+        }
+    ],
+```
 
 ```bash
 composer require tjventurini/voyager-cms 
