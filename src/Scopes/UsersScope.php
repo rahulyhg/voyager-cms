@@ -18,7 +18,7 @@ class UsersScope implements Scope
      */
     public function apply(Builder $builder, Model $model)
     {
-        if (\Auth::user()->role->name != 'admin') {
+        if (\Auth::user() && \Auth::user()->role->name != 'admin') {
             $builder->whereHas('users', function ($query) {
                 $query->where(config('voyager-projects.foreign_keys.users'), \Auth::user()->id);
             });

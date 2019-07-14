@@ -3,3 +3,26 @@
 extend type Query @middleware(checks: ["auth:api"]) {
     me: User @auth
 }
+
+##########################################
+# Mutations
+type Mutation @middleware(checks: ["projectToken"]) {
+    register(data: RegisterInput): RegisterPayload! @field(resolver: "Tjventurini\\VoyagerCMS\\GraphQL\\Mutations\\RegisterUser@resolve")
+}
+
+##########################################
+# Input Types
+input RegisterInput {
+    name: String!
+    email: String!
+    password: String!
+    password_confirmation: String!
+}
+
+##########################################
+# Types
+type RegisterPayload {
+    access_token: String!
+    token_type: String!
+    user: User!
+}
