@@ -18,5 +18,6 @@ class VoyagerCMSDatabaseSeeder extends Seeder
         // $this->call(VoyagerCMSDataTypesSeeder::class);
         // $this->call(VoyagerCMSDataRowsSeeder::class);
         $this->call(VoyagerCMSMenuItemsSeeder::class);
+        $this->call(VoyagerCMSGuestRoleSeeder::class);
     }
 }
