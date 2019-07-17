@@ -24,7 +24,7 @@ class VoyagerCMSMenuItemsSeeder extends Seeder
             $parentItem = MenuItem::updateOrCreate([
                 'title' => trans('cms::cms.label'),
             ], [
-                'url' => '#',
+                'url' => '',
                 'menu_id' => $menu->id,
                 'target' => '_self',
                 'icon_class' => 'voyager-helm',
