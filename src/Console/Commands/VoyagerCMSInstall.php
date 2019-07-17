@@ -95,6 +95,9 @@ class VoyagerCMSInstall extends Command
         // content blocks
         $this->call('db:seed', ['--class' => "Tjventurini\VoyagerCMS\Seeds\VoyagerCMSDatabaseSeeder"]);
 
+        // user management
+        $this->call('db:seed', ['--class' => "Tjventurini\VoyagerUsers\Seeds\VoyagerUsersDatabaseSeeder"]);
+
         // default seeders
         // - we run them last because they could depend on other seeders to be run first
         $this->call('db:seed');
