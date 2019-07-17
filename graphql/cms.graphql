@@ -1,31 +1,15 @@
 ##########################################
 # Queries
-extend type Query @middleware(checks: ["auth:api"]) {
-    me: User @auth
-}
+
 
 ##########################################
 # Mutations
-type Mutation @middleware(checks: ["projectToken"]) {
-    register(data: RegisterInput): User! @field(resolver: "Tjventurini\\VoyagerCMS\\GraphQL\\Mutations\\RegisterUser@resolve")
-    registerGuest(data: RegisterGuestInput): RegisterGuestPayload! @field(resolver: "Tjventurini\\VoyagerCMS\\GraphQL\\Mutations\\RegisterGuestUser@resolve")
-}
+
 
 ##########################################
 # Input Types
-input RegisterInput {
-    name: String!
-    email: String!
-    password: String!
-    password_confirmation: String!
-}
-input RegisterGuestInput {
-    email: String!
-}
+
 
 ##########################################
 # Types
-type RegisterGuestPayload {
-    user: User!
-    access_token: String!
-}
+
