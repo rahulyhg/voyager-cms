@@ -15,6 +15,7 @@
         "tjventurini/voyager-content-blocks": "*",
         "tjventurini/voyager-pages": "*",
         "tjventurini/voyager-posts": "*",
+        "tjventurini/voyager-users": "*",
         "laravel/passport": "^7.3",
         "joselfonseca/lighthouse-graphql-passport-auth": "^1.3"
     },
