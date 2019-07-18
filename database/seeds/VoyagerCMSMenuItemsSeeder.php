@@ -40,43 +40,51 @@ class VoyagerCMSMenuItemsSeeder extends Seeder
             // the cms menu item
 
             // pages
-            $url = route('voyager.pages.index', [], false);
+            $route = 'voyager.pages.index';
             $menuItem = MenuItem::updateOrCreate([
-                'url' => $url,
+                'route' => $route,
             ], [
                 'menu_id' => $menu->id,
                 'parent_id' => $parentItem->id,
-                'order' => 1
+                'url' => '',
+                'order' => 1,
+                'title' => trans('pages::pages.label_singular'),
             ]);
 
             // posts
-            $url = route('voyager.posts.index', [], false);
+            $route = 'voyager.posts.index';
             $menuItem = MenuItem::updateOrCreate([
-                'url' => $url,
+                'route' => $route,
             ], [
                 'menu_id' => $menu->id,
                 'parent_id' => $parentItem->id,
-                'order' => 2
+                'url' => '',
+                'order' => 2,
+                'title' => trans('posts::posts.label_singular'),
             ]);
 
             // content-blocks
-            $url = route('voyager.content-blocks.index', [], false);
+            $route = 'voyager.content-blocks.index';
             $menuItem = MenuItem::updateOrCreate([
-                'url' => $url,
+                'route' => $route,
             ], [
                 'menu_id' => $menu->id,
                 'parent_id' => $parentItem->id,
-                'order' => 3
+                'url' => '',
+                'order' => 3,
+                'title' => trans('content-blocks::content-blocks.label_singular'),
             ]);
 
             // tags
-            $url = route('voyager.tags.index', [], false);
+            $route = 'voyager.tags.index';
             $menuItem = MenuItem::updateOrCreate([
-                'url' => $url,
+                'route' => $route,
             ], [
                 'menu_id' => $menu->id,
                 'parent_id' => $parentItem->id,
-                'order' => 5
+                'url' => '',
+                'order' => 5,
+                'title' => trans('tags::tags.label_singular'),
             ]);
         });
     }
