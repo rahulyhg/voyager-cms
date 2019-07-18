@@ -60,8 +60,17 @@ class VoyagerCMSInstall extends Command
         // install passport
         $this->call('passport:install');
 
+        // install lighthouse graphql
+        $this->call('vendor:publish', [
+            '--provider' => 'Nuwave\Lighthouse\LighthouseServiceProvider',
+            '--tag' => 'schema'
+        ]);
+
         // install lighthouse graphql passport auth package
-        $this->call('vendor:publish', ['--provider' => 'Joselfonseca\LighthouseGraphQLPassport\Providers\LighthouseGraphQLPassportServiceProvider']);
+        $this->call('vendor:publish', [
+            '--provider' => 'Joselfonseca\LighthouseGraphQLPassport\Providers\LighthouseGraphQLPassportServiceProvider',
+        ]);
+
 
         // clear cache
         $this->call('cache:clear');
