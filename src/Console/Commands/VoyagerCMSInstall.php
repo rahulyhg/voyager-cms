@@ -165,6 +165,12 @@ class VoyagerCMSInstall extends Command
         $this->customCall('vendor:publish', ['--provider' => "Tjventurini\VoyagerCMS\VoyagerCMSServiceProvider", '--tag' => 'views']);
         $this->customCall('vendor:publish', ['--provider' => "Tjventurini\VoyagerCMS\VoyagerCMSServiceProvider", '--tag' => 'lang']);
         $this->customCall('vendor:publish', ['--provider' => "Tjventurini\VoyagerCMS\VoyagerCMSServiceProvider", '--tag' => 'graphql']);
+
+        // users
+        $this->customCall('vendor:publish', ['--provider' => "Tjventurini\VoyagerUsers\VoyagerUsersServiceProvider", '--tag' => 'config']);
+        $this->customCall('vendor:publish', ['--provider' => "Tjventurini\VoyagerUsers\VoyagerUsersServiceProvider", '--tag' => 'views']);
+        $this->customCall('vendor:publish', ['--provider' => "Tjventurini\VoyagerUsers\VoyagerUsersServiceProvider", '--tag' => 'lang']);
+        $this->customCall('vendor:publish', ['--provider' => "Tjventurini\VoyagerUsers\VoyagerUsersServiceProvider", '--tag' => 'graphql']);
     }
 
     /**
